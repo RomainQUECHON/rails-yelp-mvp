@@ -1,0 +1,8 @@
+<h2><%= @restaurant.name %></h2>
+<% @reviews.each do |review| %>
+    <div style="width: 400px; border: solid black 1px; padding: 10px ;margin: 20px">
+      <h3><%= review.rating %></h3>
+      <p><%= review.content %></p>
+    </div>
+  <% end %>
+  <%= link_to "Back to the restaurant detail", restaurant_path(@restaurant), class:"btn btn-primary" %>

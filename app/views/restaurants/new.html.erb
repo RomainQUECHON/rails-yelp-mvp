@@ -1,0 +1,20 @@
+<h2>Enter a new restaurant!</h2>
+
+<div class="container mt-3">
+  <%= form_for @restaurant do |restaurant| %>
+    <%= restaurant.label :name %>
+    <%= restaurant.text_field :name %>
+
+    <%= restaurant.label :address %>
+    <%= restaurant.text_field :address %>
+
+    <%= restaurant.label :phone_number %>
+    <%= restaurant.text_field :phone_number %>
+
+    <%= restaurant.label :category %>
+    <%= restaurant.text_field :category, collection: Restaurant::CATEGORIES %>
+
+    <%= restaurant.submit  %>
+  <% end %>
+  <%= link_to "back to restaurants lists", restaurants_path, class:"btn btn-primary mt-3" %>
+</div>
